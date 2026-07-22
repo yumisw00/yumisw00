@@ -1,0 +1,43 @@
+name: 🐍 Deterministik Snake Graph Generator
+
+# Mendefinisikan input/trigger eksekusi
+on:
+  # Loop-breaker: Dibatasi 1x per siklus 24 jam (00:00 UTC) untuk komputasi asinkron
+  schedule:
+    - cron: "0 0 * * *"
+  # Memungkinkan injeksi trigger manual via GitHub UI untuk validasi state pertama
+  workflow_dispatch:
+
+# Otorisasi ketat (Zero Trust Principle)
+permissions:
+  contents: write # Mutlak diperlukan untuk bypass proteksi write-access ke output branch
+
+jobs:
+  generate-snake-matrix:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5 # Predictive error handling: kill otomatis jika eksekusi melebihi threshold waktu
+
+    steps:
+      # Fase 1: Injeksi engine Platane untuk kalkulasi pathfinding ular
+      - name: 🧬 Eksekusi Algoritma Spasial & Render SVG
+        uses: Platane/snk/svg-only@v3
+        id: snake-gif
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          # Skema output deterministik (Light & Dark Mode)
+          outputs: |
+            dist/github-contribution-grid-snake.svg
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+        env:
+          # Integrasi token native tanpa ekspos kunci personal eksternal
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # Fase 2: Deployment state terisolasi ke Orphan Branch
+      - name: 🚀 Push Vector Assets ke Output Branch
+        uses: crazy-max/ghaction-github-pages@v3.1.0
+        with:
+          target_branch: output # Branch ini akan tercipta otomatis secara terisolasi
+          build_dir: dist
+          keep_history: false # Wajib: Cegah repository bloat via force-push (Self-Healing memory)
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
