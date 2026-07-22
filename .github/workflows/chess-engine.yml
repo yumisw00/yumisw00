@@ -1,0 +1,33 @@
+name: ♟️ Deterministik Chess State Machine
+
+on:
+  issues:
+    types: [opened] # Trigger hanya tereksekusi saat issue baru (langkah) dibuat
+
+# MENCEGAH RACE CONDITION: Mengunci thread runner jika ada update README yang sedang berjalan
+concurrency:
+  group: readme-write-lock
+  cancel-in-progress: false # Wajib false agar antrean langkah tidak hilang, hanya tertunda
+
+permissions:
+  contents: write
+  issues: write # Wajib untuk manipulasi dan penutupan issue setelah langkah divalidasi
+
+jobs:
+  execute-chess-move:
+    runs-on: ubuntu-latest
+    # Loop-breaker constraint: Abaikan issue yang tidak memiliki prefix catur
+    if: startsWith(github.event.issue.title, 'Chess:') || startsWith(github.event.issue.title, 'chess|')
+    timeout-minutes: 5
+
+    steps:
+      - name: 📥 Clone State Repositori
+        uses: actions/checkout@v4
+
+      - name: ♟️ Kalkulasi Engine & Render Ulang README
+        uses: marcizhu/readme-chess@v1
+        with:
+          # Injeksi kredensial untuk bypass rate limit dan memungkinkan auto-commit
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Menentukan direktori target injeksi, default di root README.md
+          COMMIT_MSG: "chore(chess): sinkronisasi state papan via otomatisasi 🤖"
