@@ -25,7 +25,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: ♟️ Kalkulasi Engine & Render Ulang README
-        uses: marcizhu/readme-chess@v1
+        uses: marcizhu/readme-chess@master
         with:
           # Injeksi kredensial untuk bypass rate limit dan memungkinkan auto-commit
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
