@@ -1,0 +1,27 @@
+name: 🗑️ Garbage Collection (Issue Tracker)
+
+on:
+  schedule:
+    # Dieksekusi otomatis setiap pukul 03:00 UTC (saat load server rendah)
+    - cron: "0 3 * * *"
+  workflow_dispatch:
+
+permissions:
+  issues: write
+
+jobs:
+  predictive-cleanup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: 🧹 Purge Closed Game Issues
+        uses: actions/stale@v9
+        with:
+          # Skema targeting spesifik pada output game
+          any-of-issue-labels: 'readme-chess, tictactoe'
+          stale-issue-message: 'Log eksekusi ini telah dikalkulasi dan diarsipkan oleh sistem.'
+          close-issue-message: 'State terkonfirmasi. Menutup sesi.'
+          days-before-stale: 1 # Tandai stale setelah 24 jam
+          days-before-close: 0 # Langsung tutup setelah marked stale
+          delete-branch: false

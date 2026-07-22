@@ -1,0 +1,31 @@
+name: ❌⭕ Deterministik Tic-Tac-Toe Matrix
+
+on:
+  issues:
+    types: [opened]
+
+# MENGGUNAKAN LOCK YANG SAMA DENGAN CATUR UNTUK MENCEGAH BENTROKAN I/O
+concurrency:
+  group: readme-write-lock
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  execute-tictactoe-move:
+    runs-on: ubuntu-latest
+    if: startsWith(github.event.issue.title, 'tictactoe|')
+    timeout-minutes: 2
+
+    steps:
+      - name: 📥 Clone State Repositori
+        uses: actions/checkout@v4
+
+      - name: 🎮 Eksekusi Logika Matriks 3x3
+        uses: pufit/readme-tictactoe@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          commit_message: "chore(tictactoe): update koordinat matriks 🤖"
