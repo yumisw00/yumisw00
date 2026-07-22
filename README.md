@@ -1,56 +1,42 @@
-# ⚡ [Nama Anda] | Principal Systems Engineer & Mobile Architect
+## ⚙️ Arsitektur Sistem & Ekosistem Pengembang
 
-> "Mengorkestrasi sistem deterministik, skalabilitas cloud, dan ekosistem cross-platform tanpa kompromi pada arsitektur."
+Pendekatan rekayasa perangkat lunak saya bertumpu pada lingkungan bare-metal yang efisien dan sinkronisasi lintas platform yang deterministik.
 
-## 🧠 Profil Eksekusi
+### Mobile Engineering & UI State
+<!-- 
+  Parameter 'i' mendefinisikan array ikon. 
+  Parameter 'perline' mengunci batasan kolom untuk mencegah layout-breaking pada resolusi mobile.
+  Mencakup: Android Studio, Kotlin, Jetpack Compose (biasanya direpresentasikan via Android), Flutter, Dart.
+-->
+<div align="center">
+  <img src="https://skillicons.dev/icons?i=androidstudio,kotlin,flutter,dart&perline=4&theme=dark" alt="Mobile Stack" />
+</div>
 
-Sebagai mahasiswa Teknologi Informasi dan pengembang perangkat lunak, fokus utama saya adalah merancang infrastruktur kode berstandar produksi. Saya memprioritaskan efisiensi algoritma tingkat rendah hingga arsitektur tingkat tinggi (MVVM/Clean Architecture). 
+### Backend & Cloud Synchronization
+<!-- 
+  Mengatur pipeline integrasi data.
+  Mencakup: Laravel (PHP), MySQL, Git, GitHub.
+-->
+<div align="center">
+  <img src="https://skillicons.dev/icons?i=laravel,php,mysql,git,github&perline=5&theme=dark" alt="Backend Stack" />
+</div>
 
-Metodologi pengembangan saya secara ketat menghindari *memory leak*, mengoptimalkan manajemen *thread* (asinkronisasi paralel), dan memastikan efisiensi *recomposition/rebuild* pada ekosistem UI modern.
+### OS & Compiler Environment
+<!-- 
+  Lingkungan kompilasi low-overhead untuk mencegah bottleneck komputasi.
+  Mencakup: Linux, Arch Linux (sebagai representasi EndeavourOS), Bash.
+-->
+<div align="center">
+  <img src="https://skillicons.dev/icons?i=linux,arch,bash&perline=3&theme=dark" alt="OS Stack" />
+</div>
+## 🛠️ Stack Teknologi
 
-- 💻 **Lingkungan Dev:** EndeavourOS (Arch Linux) — Dioptimalkan untuk kompilasi *bare-metal* tanpa *overhead* latar belakang.
-- ⚙️ **Fokus Saat Ini:** Sinkronisasi *cloud backend*, *state management* lintas platform, dan *predictive error handling*.
-
----
-
-## 🛠️ Ekosistem & Stack Teknologi
-
-Skema teknologi terintegrasi yang saya kelola untuk pengembangan iteratif dan *deployment*:
-
-### Mobile & UI Engineering
-*   **Android Native:** Android Studio, Kotlin, Jetpack Compose.
-*   **Cross-Platform:** Flutter.
-*   *Fokus: Optimasi frame rate, deterministik state UI, modularitas komponen.*
-
-### Backend & Infastructure
-*   **Web Frameworks:** Laravel.
-*   **Arsitektur Data:** Cloud-native deployments, Relational/NoSQL, Multi-user state synchronization.
-*   *Fokus: Integritas ACID, pipeline API yang aman, query time reduction.*
-
----
-
-## 🚀 Proyek Terkini (Arsitektur & Skalabilitas)
-
-*   📦 **[E-Office Platform]** 
-    Infrastruktur administrasi *cross-platform* yang dibangun dengan **Flutter**. Diarsiteki untuk pengolahan data asinkron berkinerja tinggi, modularitas fitur enterprise, dan eksekusi jaringan yang presisi di berbagai jenis *device*.
-
-*   🧩 **[Zola Mahjong]** 
-    Sistem permainan logika seluler dengan kapabilitas *multi-user*. Mengintegrasikan **Cloud Backend** untuk sinkronisasi waktu nyata, desain *state management* yang ketat untuk mencegah *goal drift* selama *gameplay*, dan pengamanan data berbasis *node*.
-
----
-
-## 📈 Metrik Eksekusi Sistem
-
-<!-- Tambahkan GitHub Readme Stats API di bawah ini. Ubah 'username' dengan ID GitHub Anda. -->
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=YOUR_GITHUB_USERNAME&show_icons=true&theme=radium&hide_border=true&include_all_commits=true&count_private=true)
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR_GITHUB_USERNAME&layout=compact&theme=radium&hide_border=true)
-
----
-
-## 🏋️ Loop-Breaker & Reset
-
-Kapasitas kognitif membutuhkan *garbage collection* dan *hardware maintenance* fisik. Saat tidak berada di depan IDE, saya menjalankan rutinitas *weightlifting* secara sistematis dan merancang konten tutorial *fitness*. Keseimbangan antara stres komputasi dan ketahanan fisik adalah kunci dari operasi jangka panjang yang stabil.
-
-<br>
-
-> **[Tautan Portofolio]** | **[LinkedIn Profile]** | **[Email Kontak]**
+<!-- 
+  Menyatukan 12 modul teknologi dalam satu payload SVG tunggal.
+  Menggunakan parameter theme=dark agar kontras visual selaras dengan mode gelap default developer.
+-->
+<p align="center">
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=linux,arch,androidstudio,kotlin,flutter,dart,laravel,php,mysql,git,github,bash&perline=6&theme=dark" alt="Full Technology Stack Matrix" />
+  </a>
+</p>
